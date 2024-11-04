@@ -17,7 +17,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class RacersViewModel @Inject constructor(val repo: RacerRepo):ViewModel(){
+class RacersViewModel @Inject constructor(private val repo: RacerRepo):ViewModel(){
   val userIntent = Channel<RacersIntent>(Channel.UNLIMITED)
 
   private val _state = MutableStateFlow<RacersState>(RacersState.Idle)
@@ -49,9 +49,13 @@ class RacersViewModel @Inject constructor(val repo: RacerRepo):ViewModel(){
       }
     }
   }
-  private fun loadRacers() {
+  private suspend fun loadRacers() {
     _state.value = RacersState.Loading
    val racers = repo.loadRacers()
-    _state.value = RacersState.RacersLoaded(racers)
+    if (racers.isNotEmpty())
+      _state.value = RacersState.RacersLoaded(racers)
+    else {
+      _state.value = RacersState.Empty
+    }
   }
 }

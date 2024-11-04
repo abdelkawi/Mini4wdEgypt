@@ -6,7 +6,7 @@ import com.mini4wd.egypt.domain.RacerRepo
 import javax.inject.Inject
 
 class RacersRepoImpl @Inject constructor(private val remote: RemoteDataSource): RacerRepo {
-  override fun loadRacers(): List<Racer> {
-    return remote.getRacers()
+  override suspend fun loadRacers(): List<Racer> {
+   return remote.getRacers()
   }
 }

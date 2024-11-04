@@ -63,6 +63,8 @@ dependencies {
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1")
   kapt("com.google.dagger:hilt-android-compiler:2.51.1")
   implementation(libs.androidx.navigation.fragment.ktx)
+  implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.2.1")
+
   implementation(libs.androidx.navigation.ui.ktx)
   testImplementation(libs.junit)
   androidTestImplementation(libs.androidx.junit)

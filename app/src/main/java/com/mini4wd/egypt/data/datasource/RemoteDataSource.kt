@@ -4,11 +4,16 @@ import android.util.Log
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.toObject
 import com.mini4wd.egypt.data.model.Racer
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.tasks.await
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class RemoteDataSource @Inject constructor(private val db: FirebaseFirestore) {
 
-  fun getRacers():List<Racer>{
+ suspend fun getRacers(): List<Racer>{
     val racers = mutableListOf<Racer>()
     db.collection("racers")
       .get()
@@ -19,8 +24,8 @@ class RemoteDataSource @Inject constructor(private val db: FirebaseFirestore) {
       }
       .addOnFailureListener { exception ->
         Log.w("FirebaseError", "Error getting documents: ", exception)
-      }
-    return racers
+      }.await()
+   return racers
   }
 
   fun addRacer(racer:Racer):Boolean {
