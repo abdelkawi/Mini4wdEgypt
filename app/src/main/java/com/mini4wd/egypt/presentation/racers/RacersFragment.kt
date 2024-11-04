@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.mini4wd.egypt.R
 import com.mini4wd.egypt.databinding.FragmentRacersBinding
 import com.mini4wd.egypt.presentation.racers.RacersState.Clear
@@ -30,6 +31,9 @@ class RacersFragment:Fragment(R.layout.fragment_racers) {
       viewModel.userIntent.send(RacersIntent.LoadRacers)
     }
     binding.racersRecyclerView.adapter = racersAdapter
+    binding.addRacerButton.setOnClickListener {
+      findNavController().navigate(RacersFragmentDirections.actionRacersFragmentToAddRacer())
+    }
     handleState()
   }
   private fun handleState(){
@@ -57,6 +61,8 @@ class RacersFragment:Fragment(R.layout.fragment_racers) {
             binding.racersRecyclerView.visibility = View.VISIBLE
             racersAdapter.submitList(it.racers)
           }
+
+          else -> {}
         }
       }
     }

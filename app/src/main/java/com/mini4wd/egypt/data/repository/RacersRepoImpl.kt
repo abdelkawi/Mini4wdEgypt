@@ -9,4 +9,8 @@ class RacersRepoImpl @Inject constructor(private val remote: RemoteDataSource): 
   override suspend fun loadRacers(): List<Racer> {
    return remote.getRacers()
   }
+
+  override suspend fun addRacer(racer: Racer):Boolean {
+    return remote.addRacer(racer)
+  }
 }

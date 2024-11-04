@@ -12,4 +12,6 @@
   <string name="rounds">Rounds</string>
   <string name="search_racers">Search Racer</string>
   <string name="no_racers_added">No Racers added</string>
+  <string name="search_cars">Search Cars</string>
+  <string name="no_cars_added">No Cars Added</string>
 </resources>

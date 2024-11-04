@@ -28,11 +28,11 @@ class RemoteDataSource @Inject constructor(private val db: FirebaseFirestore) {
    return racers
   }
 
-  fun addRacer(racer:Racer):Boolean {
+  suspend fun addRacer(racer:Racer):Boolean {
     var done = false
     db.collection("racers").add(racer).addOnSuccessListener {
       done = true
-    }
+    }.await()
     return done
   }
 }

@@ -17,16 +17,7 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
 
-  <ImageButton
-    android:id="@+id/addRacerButton"
-    android:layout_width="100dp"
-    android:layout_height="100dp"
-    android:background="@android:color/transparent"
-    android:contentDescription="@string/add_racer"
-    android:src="@drawable/add_racer"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-   />
+
 
   <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/racersRecyclerView"
@@ -57,5 +48,14 @@
     android:id="@+id/emptyText"
     app:layout_constraintBottom_toBottomOf="parent"
     android:layout_height="wrap_content" />
+  <ImageView
+    android:id="@+id/addRacerButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:contentDescription="@string/add_racer"
+    android:src="@drawable/add_racer"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
