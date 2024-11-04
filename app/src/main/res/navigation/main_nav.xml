@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/main_nav"
+  app:startDestination="@id/homeFragment">
+
+  <fragment
+    android:id="@+id/homeFragment"
+    tools:layout="@layout/fragment_home"
+    android:name="com.mini4wd.egypt.presentation.home.HomeFragment"
+    android:label="HomeFragment" >
+    <action
+      android:id="@+id/action_homeFragment_to_carsFragment"
+      app:destination="@id/carsFragment" />
+    <action
+      android:id="@+id/action_homeFragment_to_racesFragment"
+      app:destination="@id/racesFragment" />
+    <action
+      android:id="@+id/action_homeFragment_to_roundsFragment"
+      app:destination="@id/roundsFragment" />
+    <action
+      android:id="@+id/action_homeFragment_to_racersFragment"
+      app:destination="@id/racersFragment" />
+  </fragment>
+  <fragment
+    android:id="@+id/carsFragment"
+    tools:layout="@layout/fragment_cars"
+    android:name="com.mini4wd.egypt.presentation.cars.CarsFragment"
+    android:label="CarsFragment" />
+  <fragment
+    android:id="@+id/racersFragment"
+    tools:layout="@layout/fragment_racers"
+    android:name="com.mini4wd.egypt.presentation.racers.RacersFragment"
+    android:label="RacersFragment" >
+    <action
+      android:id="@+id/action_racersFragment_to_addRacer"
+      app:destination="@id/addRacer" />
+  </fragment>
+  <fragment
+    android:id="@+id/racesFragment"
+    tools:layout="@layout/fragment_races"
+    android:name="com.mini4wd.egypt.presentation.races.RacesFragment"
+    android:label="RacesFragment" >
+    <action
+      android:id="@+id/action_racesFragment_to_addRace"
+      app:destination="@id/addRace" />
+  </fragment>
+  <fragment
+    android:id="@+id/roundsFragment"
+    tools:layout="@layout/fragment_rounds"
+    android:name="com.mini4wd.egypt.presentation.rounds.RoundsFragment"
+    android:label="RoundsFragment" />
+  <fragment
+    android:id="@+id/addCarFragment"
+    android:name="com.mini4wd.egypt.presentation.addcar.AddCarFragment"
+    android:label="AddCarFragment" />
+  <fragment
+    android:id="@+id/addRace"
+    tools:layout="@layout/fragment_add_racer"
+    android:name="com.mini4wd.egypt.presentation.addrace.AddRace"
+    android:label="AddRace" />
+  <fragment
+    android:id="@+id/addRacer"
+    tools:layout="@layout/fragment_add_racer"
+    android:name="com.mini4wd.egypt.presentation.addracer.AddRacer"
+    android:label="AddRacer" />
+</navigation>

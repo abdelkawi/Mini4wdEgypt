@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+
+
+  <androidx.constraintlayout.widget.Guideline
+    android:id="@+id/horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:layout_constraintGuide_percent="0.5" />
+
+  <!-- Bottom Guidelines -->
+  <androidx.constraintlayout.widget.Guideline
+    android:id="@+id/vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintGuide_percent="0.5" />
+
+
+
+
+  <!-- TextViews -->
+  <TextView
+    android:id="@+id/racersTv"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:text="@string/racers"
+    android:gravity="center"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="@id/horizontal"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="@id/vertical" />
+
+  <TextView
+    android:id="@+id/racesTv"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:text="@string/races"
+    android:gravity="center"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="@id/horizontal"
+    app:layout_constraintStart_toStartOf="@id/vertical"
+    app:layout_constraintEnd_toEndOf="parent" />
+
+  <TextView
+    android:id="@+id/roundsTv"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:text="@string/rounds"
+    android:gravity="center"
+    app:layout_constraintTop_toTopOf="@id/horizontal"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="@id/vertical" />
+
+  <TextView
+    android:id="@+id/carsTv"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:text="@string/cars"
+    android:gravity="center"
+    app:layout_constraintTop_toTopOf="@id/horizontal"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="@id/vertical"
+    app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
